@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R +655
+chmod -r 655
