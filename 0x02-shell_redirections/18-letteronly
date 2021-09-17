@@ -1,2 +1,2 @@
 #!/bin/bash
-grep regex -im /etc/ssh/sshd_config
+grep regex [:alpha:] -im /etc/ssh/sshd_config
