@@ -1,2 +1,14 @@
 #!/usr/bin/env bash
-#
+# This loop displays 12 hours in 59 minute increments
+H=0
+while (( H < 13 ))
+do
+	echo "Hour: $H"
+	M=1
+	while (( M < 60 ))
+	do
+		echo $M
+		((M++))
+	done
+	((H++))
+done	
