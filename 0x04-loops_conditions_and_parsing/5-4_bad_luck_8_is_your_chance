@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # displays bad luck on the 4th output and good luck on the 8th
-x=1
+x=0
 while (( x < 10 )) 
 do
-	echo "Holberton School"
 	((x++))
-	if (( x == 4 ));
-	then echo "bad luck"
-	elif (( x == 8 ));
-	then echo "good luck"
+	if (( x == 4 ))
+	then
+		echo "bad luck"
+	elif (( x == 8 ))
+	then
+		echo "good luck"
+	else
+		echo "Holberton School"
 	fi
 done
