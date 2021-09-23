@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # this is a while loop that will display "Holberton School" 10 times.
-while 
+NUM=1
+while [ $NUM -le 10 ]
+do
+	echo "Holberton School $NUM times"
+	NUM=$(( NUM + 1 ))
+done
