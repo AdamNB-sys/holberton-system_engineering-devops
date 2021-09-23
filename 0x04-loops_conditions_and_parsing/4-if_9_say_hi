@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # this script will display "Hi" on a new line
-VAR=1
-while [ $VAR -le 10 ] 
+x="0"
+while (( x < 10 )) 
 do
 	echo "Holberton School"
-	VAR=$(( VAR + 1 ))
-	if [[ $VAR == 9 ]];
+	((x++))
+	if (( x == 9 ));
 	then echo "Hi"
 	fi
 done
