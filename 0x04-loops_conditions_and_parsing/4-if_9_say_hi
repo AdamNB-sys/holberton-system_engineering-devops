@@ -5,6 +5,7 @@ while [ $VAR -le 10 ]
 do
 	echo "Holberton School"
 	VAR=$(( VAR + 1 ))
+	((VAR++))
 	if [[ $VAR == 9 ]];
 	then echo "Hi"
 	fi
