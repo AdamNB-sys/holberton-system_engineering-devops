@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this is an until loop that will repeat "Holberton School" 10 times
+VAR=1
+until [ $VAR -gt 10 ]
+do
+	echo "Holberton School"
+	((VAR++))
+done
