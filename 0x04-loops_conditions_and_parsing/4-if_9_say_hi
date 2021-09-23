@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this script will display "Hi" on a new line
+VAR=1
+until [ $VAR -gt 10 ] 
+do
+	echo "Holberton School"
+	((VAR++))
+	if [[ $VAR == 9 ]];
+	then echo "Hi"
+	fi
+done
