@@ -15,6 +15,7 @@ while (( x < 20 ))
 				echo "bad luck from Italy"
 				;;
 			*)
+				echo "$x"
 				;;
 		esac
 	done
