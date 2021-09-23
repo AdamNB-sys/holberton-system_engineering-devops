@@ -3,6 +3,6 @@
 NUM=1
 while [ $NUM -le 10 ]
 do
-	echo "Holberton School $NUM times"
+	echo "Holberton School"
 	NUM=$(( NUM + 1 ))
 done
