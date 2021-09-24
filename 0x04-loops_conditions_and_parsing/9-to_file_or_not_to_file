@@ -14,8 +14,6 @@ then
 	       if [[ -f "holbertonschool" ]]
 	       then
 		       echo "holbertonschool is a regular file"
-	       else
-		       ;
 	       fi
 
        else 
