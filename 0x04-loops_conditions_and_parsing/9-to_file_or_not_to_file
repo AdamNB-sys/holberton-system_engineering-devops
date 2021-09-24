@@ -2,7 +2,7 @@
 # this if loop looks for the holbertonschool file and determines its contents
 if [[ -e "holbertonschool" ]]
 then
-	echo "holbertonschool file exits"
+	echo "holbertonschool file exists"
 
 	if [[ -s "holbertonschool" ]]
 	then 
