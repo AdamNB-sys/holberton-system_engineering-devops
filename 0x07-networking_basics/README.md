@@ -71,6 +71,8 @@ The OSI model can be memorized by this phrase:
 Whereas the model looks like this, and is organized from the lowest layer 
 to the highest layer:
 
+| Layer | Transmission | System | Medium |
+|:-------:|:----:|:-----------:|:---------------:|
 | Layer 7 | Data | Application | FTP, HTTP, SMTP |
 | Layer 6 | Data | Presentation | jpeg, mpeg, gif|
 | Layer 5 | Data | Session | Apple talk |
