@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script uses private key to ssh to server with the user ubuntu
+ssh -i ~/.ssh/school ubuntu@52.90.144.186
