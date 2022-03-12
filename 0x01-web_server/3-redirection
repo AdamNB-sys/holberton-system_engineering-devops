@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # update server and then install nginx 
 old_text="^\tlocation / {"
-new_text="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://www.twitch.tv/majorloaf;\n\t}\n\tlocation / {"
+new_text="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://google.com;\n\t}\n\tlocation / {"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
