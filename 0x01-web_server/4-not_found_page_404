@@ -1,1 +1,15 @@
 #!/usr/bin/env bash
+# update server and install nginx
+# as well as configure server to specific settings
+old_text="^\tlocation / {"
+new_text="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://google.com;\n\t}\n\tlocation / {"
+new_text2="\terror_page 404 error404.html;\n\n\tlocation / {"
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+sudo sed -i "s@${old_text}@${new_text}@" /etc/nginx/sites-available/default
+sudo sed -i "s@${old_text}@${new_text2}@" /etc/nginx/sites-available/default
+sudo service nginx reload
+sudo service nginx restart
