@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # update server and then install nginx 
-old_text='^\tlocation / {'
-new_text='\tlocation /redirect_me {\n\t\treturn 301 \$scheme://twitch.tv/majorloaf;\n\t}\n\n\tlocation / {'
+old_text="^\tlocation / {"
+new_text="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://www.twitch.tv/majorloaf;\n\t}\n\tlocation / {"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 echo "Hello World!" | sudo tee /var/www/html/index.html
-sudo sed -i 's@${old_text}@${new_text}@' /etc/nginx/sites-available
+sudo sed -i "s@${old_text}@${new_text}@" /etc/nginx/sites-available/default
 sudo service nginx reload
