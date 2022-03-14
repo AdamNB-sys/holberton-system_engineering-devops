@@ -1,0 +1,11 @@
+# 0x04 MySQL
+
+
+## Learning Objectives
+
+* What is the main role of a database
+* What is a database replica
+* What is the purpose of a database replica
+* Why database backups need to be stored in different physical locations
+* What operation you should regularly perform to make sure that your database backup strategy works 
+
