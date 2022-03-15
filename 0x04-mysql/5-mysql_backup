@@ -1,1 +1,4 @@
 #!/usr/bin/env bash
+# this script creates an sql dump and saves to a zip file
+mysqldump -uroot -p'$1' --all-databases > backup.sql
+tar -czf $(date +%d_%m_%Y).tar.gz backup.sql
