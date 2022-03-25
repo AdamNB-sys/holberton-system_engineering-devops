@@ -37,5 +37,5 @@ if __name__ == '__main__':
             writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for task in todo_list:
                 writer.writerow(
-                    [(u_id), (emp_name), task.get(
+                    [(u_id), employees.get('username'), task.get(
                         'completed'), task.get('title')])
