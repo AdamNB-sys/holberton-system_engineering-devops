@@ -25,9 +25,9 @@ if __name__ == '__main__':
 
         emp_name = employees.get('name')
         done = len(finished_tasks)
-        not_done = len(todo_list)
+        total = len(todo_list)
 
         print("Employee {} is done with tasks({}/{}):".format(
-            emp_name, done, not_done))
+            emp_name, done, total))
         for title in finished_tasks:
             print("\t {}".format(title))
