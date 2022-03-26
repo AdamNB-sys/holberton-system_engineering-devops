@@ -8,50 +8,38 @@ import sys
 
 if __name__ == '__main__':
     """checks for valid input and returns employee info"""
-    if sys.argv[1].isdigit():
-        u_id = sys.argv[1]
-        response = requests.get(
-            'https://jsonplaceholder.typicode.com/todos/?userId={}'
-            .format(u_id))
-        users = requests.get(
-            'https://jsonplaceholder.typicode.com/users/{}'.format(u_id))
+    response = requests.get('https://jsonplaceholder.typicode.com/todos')
+    users = requests.get('https://jsonplaceholder.typicode.com/users')
+    todo_list = response.json()
+    employees = users.json()
 
-        finished_tasks = []
-        todo_list = response.json()
-        employees = users.json()
-
+    user_dict = {}
+    for item in employees:
+        user_dict[item.get('id')] = item.get('username')
+    master_dict = {}
+    for user in employees:
+        id = user['id']
+        master_dict[id] = []
+        # print(master_dict)
         for task in todo_list:
-            if task.get('completed') is True:
-                finished_tasks.append(task.get("title"))
-
-        emp_name = employees.get('name')
-        done = len(finished_tasks)
-        total = len(todo_list)
-
-        print("Employee {} is done with tasks({}/{}):".format(
-            emp_name, done, total))
-        for title in finished_tasks:
-            print("\t {}".format(title))
-
-    else:
-        response = requests.get('https://jsonplaceholder.typicode.com/todos')
-        users = requests.get('https://jsonplaceholder.typicode.com/users')
-        todo_list = response.json()
-        employees = users.json()
-
-        all_users = {}
-        for user in employees:
-            all_users[user['id']] = user['username']
-        print(all_users)
-        # info_json = []
-        # for items in todo_list:
-        #     new_dict = {
-        #         'task': items.get('title'),
-        #         'completed': items.get('completed'),
-        #         'username': employees.get('username')
-        #     }
-        #     info_json.append(new_dict)
-        # json_dict = {u_id: info_json}
-        # out_file = open("{}.json".format(sys.argv[1]), "w")
-        # json.dump(json_dict, out_file)
-        # out_file.close()
+            if task['userId'] == id:
+                # print(task['userId'])
+                new_dict = {
+                    'task': task.get('title'),
+                    'completed': task.get('completed'),
+                    'username': item['username']
+                    }
+                print(new_dict)
+    # info_json = []
+    # for items in todo_list:
+    #     new_dict = {
+    #         'task': items.get('title'),
+    #         'completed': items.get('completed'),
+    #         'username': employees.get('username')
+    #     }
+    #     info_json.append(new_dict)
+    #     employee_id = str(items.get('userId'))
+    # json_dict = {employee_id: info_json}
+    # out_file = open("todo_all_employees.json", "w")
+    # json.dump(json_dict, out_file)
+    # out_file.close()
