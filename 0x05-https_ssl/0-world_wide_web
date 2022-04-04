@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-# I don't know what this script does
+# This script does nothing productive, because this project
+# was a comeplete dumpster fire
+echo "Here's your script, this project was trash, thanks hbtn"
