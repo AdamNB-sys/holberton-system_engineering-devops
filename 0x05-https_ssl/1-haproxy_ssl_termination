@@ -37,7 +37,12 @@ frontend http_web
 
 	bind *:80
 
+	bind *:443 ssl crt /etc/ssl/www.majorinc.tech.pem
+
 	stats uri /haproxy?stats
+
+	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    	use_backend letsencrypt-backend if letsencrypt-acl
 
 	default_backend custom_backend
 
@@ -48,3 +53,7 @@ backend custom_backend
 	server web-01 52.90.144.186:80 check
 
 	server web-02 100.26.51.3:80 check
+
+backend letsencrypt-backend
+
+	server certbot 127.0.0.1:8899
